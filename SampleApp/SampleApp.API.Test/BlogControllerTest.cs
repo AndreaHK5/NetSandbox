@@ -17,8 +17,7 @@ namespace SampleApp.API.Test {
             Assert.IsInstanceOfType(result, typeof(OkResult));
         }
         [TestMethod]
-        public void GetTest()
-        {
+        public void GetTest() {
             var controller = new BlogController();
 
             var blog = new Blog();

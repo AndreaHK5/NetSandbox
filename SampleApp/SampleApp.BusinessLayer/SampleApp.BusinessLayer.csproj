@@ -80,8 +80,8 @@
   <ItemGroup>
     <Compile Include="AccessType.cs" />
     <Compile Include="BusinessLayerConfig.cs" />
-    <Compile Include="Dependency\DependencyService.cs" />
-    <Compile Include="Dependency\IDependencyService.cs" />
+    <Compile Include="Dependency\BusinessLayerDependencyService.cs" />
+    <Compile Include="Dependency\IBusinessLayerDependencyService.cs" />
     <Compile Include="Mocks\MockBlogService.cs" />
     <Compile Include="ModelServices\BaseService.cs" />
     <Compile Include="ModelServices\IBaseService.cs" />

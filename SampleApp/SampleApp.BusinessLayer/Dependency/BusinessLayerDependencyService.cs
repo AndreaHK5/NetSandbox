@@ -10,10 +10,10 @@ using SampleApp.RepoLayer;
 using SampleApp.RepoLayer.Mocks;
 
 namespace SampleApp.BusinessLayer.Dependency {
-    public class DependencyService : IDependencyService {
+    public class BusinessLayerDependencyService : IBusinessLayerDependencyService {
         private readonly IUnityContainer _dependencyContainer;
 
-        public DependencyService() {
+        public BusinessLayerDependencyService() {
             _dependencyContainer = new UnityContainer();
             RegisterDependencies();
         }

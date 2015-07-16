@@ -8,11 +8,11 @@ namespace SampleApp.BusinessLayer.ModelServices
 {
     public class BaseService<T> : IBaseService<T> where T : BaseDataObject {
 
-        private readonly IDependencyService _dependencyService;
+        private readonly IBusinessLayerDependencyService _dependencyService;
         private IBaseRepository<T> _repository;
 
         public BaseService() {
-            _dependencyService = new DependencyService();
+            _dependencyService = new BusinessLayerDependencyService();
             _repository = _dependencyService.Resolve<IBaseRepository<T>>();
         }
 

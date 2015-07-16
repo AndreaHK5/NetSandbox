@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace SampleApp.BusinessLayer.Dependency {
-    public interface IDependencyService {
+    public interface IBusinessLayerDependencyService {
         T Resolve<T>();
     }
 }

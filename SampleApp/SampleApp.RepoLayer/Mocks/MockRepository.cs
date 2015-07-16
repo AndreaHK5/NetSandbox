@@ -1,23 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using Norman.Data.Persistence;
+using Norman.Data.Search;
 
-namespace SampleApp.RepoLayer
+namespace SampleApp.RepoLayer.Mocks
 {
-    public class MockRepository<T> : IBaseRepository<T> where T : BaseDataObject, new()
+    public abstract class MockRepository<T> : IBaseRepository<T> where T : BaseDataObject, new()
     {
-        private readonly ReflectiveFactory Factory = ReflectiveFactory.Instance;
-        public bool Create(T Entity)
-        {
+        
+        // TODO remove this in case the mocks do not have a generalized behavior and just rely on the actual implementations
+        public bool Create(T Entity) {
             return true;
         }
 
-        public List<T> GetAll()
-        {
-            return new List<T>();
-        }
+        public abstract List<T> GetAll();
+
+        public abstract List<T> FindAll<TSearch>(ExactCriteria<TSearch> searchCriteria);
+
+        public abstract bool Update(T Entity, Criteria groupcriteria) ;
+
+        public abstract bool Delete(T Entity, Criteria groupcriteria);
     }
 }
