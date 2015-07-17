@@ -10,9 +10,15 @@ using SampleApp.RepoLayer;
 using SampleApp.RepoLayer.Mocks;
 
 namespace SampleApp.BusinessLayer.Dependency {
+    /// <summary>
+    /// Dependency container for Business Layer
+    /// </summary>
     public class BusinessLayerDependencyService : IBusinessLayerDependencyService {
         private readonly IUnityContainer _dependencyContainer;
 
+        /// <summary>
+        /// Constructor
+        /// </summary>
         public BusinessLayerDependencyService() {
             _dependencyContainer = new UnityContainer();
             RegisterDependencies();
@@ -20,6 +26,9 @@ namespace SampleApp.BusinessLayer.Dependency {
 
         public T Resolve<T>() { return _dependencyContainer.Resolve<T>(); }
 
+        /// <summary>
+        /// Register all dependencies
+        /// </summary>
         private void RegisterDependencies() {
             // TODO implement app config for the test
 

@@ -1,13 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Norman.Data.Persistence;
 using Norman.Data.Search;
 
 namespace SampleApp.RepoLayer
 {
+    /// <summary>
+    /// Implementation of Repository for T
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public class BaseRepository<T> : IBaseRepository<T> where T : BaseDataObject, new() 
     {
         private readonly ReflectiveFactory Factory = ReflectiveFactory.Instance;

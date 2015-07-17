@@ -10,16 +10,26 @@ using SampleApp.Models;
 
 namespace SampleApp.Dependency
 {
+    /// <summary>
+    /// Dependency resolver for api project - Unity 
+    /// </summary>
     public class ApiDependencyService : IApiDependencyService {
             private readonly IUnityContainer _dependencyContainer;
-
+            
+            /// <summary>
+            /// Constructor
+            /// </summary>
             public ApiDependencyService() {
                 _dependencyContainer = new UnityContainer();
                 RegisterDependencies();
             }
 
+            
             public T Resolve<T>() { return _dependencyContainer.Resolve<T>(); }
-
+            
+            /// <summary>
+            /// Resolve dependencies
+            /// </summary>
             private void RegisterDependencies() {
                 switch (APIConfig.Repository)
                 {

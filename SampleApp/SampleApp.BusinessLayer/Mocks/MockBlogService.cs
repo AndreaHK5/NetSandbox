@@ -3,6 +3,9 @@ using SampleApp.BusinessLayer.ModelServices;
 using SampleApp.Models;
 
 namespace SampleApp.BusinessLayer.Mocks {
+    /// <summary>
+    /// Mock implementation of Blog Service
+    /// </summary>
     public class MockBlogService : IBaseService<Blog> {
         public bool Create(Blog Entity) {
             return true;
