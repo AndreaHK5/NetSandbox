@@ -26,7 +26,7 @@ Uses:
 * ORM: NORMAN (not open source yet, but pretty nifty ORM package by Christian Jungers).
 * Dependency Container: Unity
 * Visual Studio Native: Tests
-* Brain: Andrea =)
+* Brain: Andrea + many other developers I had the luck and pleaseure to work and play with.
 
 
 Implement next:
@@ -39,5 +39,8 @@ Implement next:
 * Unit tests for the business logic.
 * Mocks for the business logic to be injected from the tests(?)
 * Multitenancy
+
+
+
 
 
