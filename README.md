@@ -18,7 +18,10 @@ What this implements now:
 * Unit Testing (For API) 
 * RESTful API design to service multiple clients (mobile, browser, other).
 * Concise code notation.
-* .gitignore from [here](https://github.com/github/gitignore/blob/master/VisualStudio.gitignore) but do no use Nuget Restore (or at least read [this](http://www.xavierdecoster.com/migrate-away-from-msbuild-based-nuget-package-restore))! 
+* xml commenting
+* .gitignore from [here](https://github.com/github/gitignore/blob/master/VisualStudio.gitignore) but do no use Nuget Restore (or at least read [this](http://www.xavierdecoster.com/migrate-away-from-msbuild-based-nuget-package-restore))!
+* Validations for the end points with Fluent validation.
+* Newtonsoft Json.net.
 
 Uses:
 
@@ -26,17 +29,19 @@ Uses:
 * ORM: NORMAN (not open source yet, but pretty nifty ORM package by Christian Jungers).
 * Dependency Container: Unity
 * Visual Studio Native: Tests
-* Brain: Andrea + many other developers I had the luck and pleaseure to work and play with.
+* [FluentValidation](https://github.com/JeremySkinner/FluentValidation).
+* [Json.net](http://www.newtonsoft.com/json).
+* Does NOT uses IHttpActionResult, as it is more difficult to test.
+* Brain: a little bit of mine but mostly that of many other developers I had the luck and pleaseure to work and play with.
 
 
 Implement next:
 
-* Validations for the controllers.
 * Using DTOs AND mapping (even though the use ofd DTOs is somewhat controversial and advised only if strictly required?).
+* NHibernate for the persistence layer (as NORMAN is not open source yet).
 * OAuth / authentication.
 * Config / prebuilt events for local / deployment.
-* NHibernate for the persistence layer (as NORMAN is not open source yet).
-* Unit tests for the business logic.
+* Unit tests for the business logic / Moq?.
 * Mocks for the business logic to be injected from the tests(?)
 * Multitenancy
 

@@ -1,4 +1,7 @@
-﻿using System.Web.Http;
+﻿using System.Diagnostics;
+using System.Net;
+using System.Threading;
+using System.Web.Http;
 using System.Web.Http.Results;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SampleApp.Controllers;
@@ -9,20 +12,36 @@ namespace SampleApp.API.Test {
     public class BlogControllerTest {
         
         [TestMethod]
-        public void PutTest() {
+        public void Put_Valid_Blog_Test() {
+            // Arrange
+            var controller = new BlogController();
+            var blog = new Blog();
+            blog.AuthorName = "somename";
+            blog.Title = "SomeTitle";
+
+            // Act
+            var result = controller.Put(blog);
+
+            // Assert
+            Assert.AreEqual(result.StatusCode, HttpStatusCode.OK);
+        }
+
+
+        [TestMethod]
+        public void Blog_Must_Validate_And_Return_Message () {
             // Arrange
             var controller = new BlogController();
             var blog = new Blog();
 
             // Act
-            IHttpActionResult result = controller.Put(blog);
+            var result = controller.Put(blog);
 
             // Assert
-            Assert.IsInstanceOfType(result, typeof(OkResult));
+            Assert.AreEqual(result.StatusCode, HttpStatusCode.BadRequest);
         }
 
         [TestMethod]
-        public void GetTest() {
+        public void Get_Blogs_Test() {
             //Arrange
             var controller = new BlogController();
 
@@ -30,7 +49,10 @@ namespace SampleApp.API.Test {
             var result = controller.Get();
 
             // Assert
-            Assert.AreEqual(result.Count, 1);
+            // TODO consider using MOQ instead?
+            Assert.AreEqual(result.StatusCode, HttpStatusCode.OK);
         }
+
+
     }
 }
