@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace SampleApp.BusinessLayer.ModelServices
 {
@@ -14,5 +10,7 @@ namespace SampleApp.BusinessLayer.ModelServices
         // TODO implement all other CRUD methods?
         bool Create(T Entity);
         List<T> GetAll();
+
+
     }
 }
