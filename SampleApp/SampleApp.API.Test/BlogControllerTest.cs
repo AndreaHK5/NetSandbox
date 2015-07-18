@@ -5,6 +5,7 @@ using System.Web.Http;
 using System.Web.Http.Results;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SampleApp.Controllers;
+using SampleApp.DTO;
 using SampleApp.Models;
 
 namespace SampleApp.API.Test {
@@ -15,7 +16,7 @@ namespace SampleApp.API.Test {
         public void Put_Valid_Blog_Test() {
             // Arrange
             var controller = new BlogController();
-            var blog = new Blog();
+            var blog = new BlogDto();
             blog.AuthorName = "somename";
             blog.Title = "SomeTitle";
 
@@ -31,7 +32,7 @@ namespace SampleApp.API.Test {
         public void Blog_Must_Validate_And_Return_Message () {
             // Arrange
             var controller = new BlogController();
-            var blog = new Blog();
+            var blog = new BlogDto();
 
             // Act
             var result = controller.Put(blog);

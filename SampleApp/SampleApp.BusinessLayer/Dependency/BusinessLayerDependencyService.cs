@@ -35,19 +35,19 @@ namespace SampleApp.BusinessLayer.Dependency {
             // Repositories
             switch (BusinessLayerConfig.Repository) {
                 case AccessType.Persistance:
-                    _dependencyContainer.RegisterType<IBaseRepository<Blog>, BaseRepository<Blog>>();
+                    _dependencyContainer.RegisterType<IBaseRepository<    Blog>, BaseRepository<Blog>>();
                     _dependencyContainer.RegisterType<IBaseRepository<BlogPost>, BaseRepository<BlogPost>>();
                     break;
                 case AccessType.Mock:
-                    _dependencyContainer.RegisterType<IBaseRepository<Blog>,MockBlogRepository>();
+                    _dependencyContainer.RegisterType<IBaseRepository<    Blog>, MockBlogRepository>();
                     _dependencyContainer.RegisterType<IBaseRepository<BlogPost>, MockRepository<BlogPost>>();
                     break;
             }
 
 
             // Services
-            _dependencyContainer.RegisterType<IBaseService<BlogPost>, BaseService<BlogPost>>();
-            _dependencyContainer.RegisterType<IBaseService<Blog>, BaseService<Blog>>();
+            //_dependencyContainer.RegisterType<IModelService<BlogPost>, ModelService<BlogPost>>();
+            //_dependencyContainer.RegisterType<IModelService<Blog>, ModelService<Blog>>();
         }
 
     }

@@ -1,16 +1,12 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-using FluentValidation.Results;
-using Newtonsoft.Json;
-using SampleApp.BusinessLayer.Dependency;
 using SampleApp.BusinessLayer.ModelServices;
 using SampleApp.BusinessLayer.Validation;
 using SampleApp.Dependency;
+using SampleApp.DTO;
 using SampleApp.Helpers;
-using SampleApp.Models;
 
 namespace SampleApp.Controllers
 {
@@ -19,14 +15,14 @@ namespace SampleApp.Controllers
     /// </summary>
     [RoutePrefix("api/blog")]
     public class BlogController : ApiController {
-        private readonly IBaseService<Blog> _blogService;
+        private readonly IModelService<BlogDto> _blogService;
 
         /// <summary>
         /// Constructor for injection
         /// </summary>
         public BlogController() {
             var _dependencyService = new ApiDependencyService();
-            _blogService = _dependencyService.Resolve<IBaseService<Blog>>();
+            _blogService = _dependencyService.Resolve<IModelService<BlogDto>>();
         }
 
         /// <summary>
@@ -37,7 +33,7 @@ namespace SampleApp.Controllers
         /// <remarks>PUT: api/blog/v1</remarks>
         [Route("v1/")]
         [HttpPut]
-        public HttpResponseMessage Put(Blog blog)
+        public HttpResponseMessage Put(BlogDto blog)
         {
             var validationService = new BlogValidation();
             var results = validationService.Validate(blog);
@@ -59,7 +55,7 @@ namespace SampleApp.Controllers
         public HttpResponseMessage Get() {
             var results = _blogService.GetAll();
 
-            var helper = new BaseControllerHelper<Blog>();
+            var helper = new BaseControllerHelper<BlogDto>();
 
             return helper.Ok(results);
         }

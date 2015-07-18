@@ -21,7 +21,7 @@ What this implements now:
 * xml commenting
 * .gitignore from [here](https://github.com/github/gitignore/blob/master/VisualStudio.gitignore) but do no use Nuget Restore (or at least read [this](http://www.xavierdecoster.com/migrate-away-from-msbuild-based-nuget-package-restore))!
 * Validations for the end points with Fluent validation.
-* Newtonsoft Json.net.
+* Using DTOs AND mapping (even though the use ofd DTOs is somewhat controversial and advised only if strictly required?).
 
 Uses:
 
@@ -33,12 +33,13 @@ Uses:
 * [Json.net](http://www.newtonsoft.com/json).
 * Does NOT uses IHttpActionResult, as it is more difficult to test.
 * Brain: a little bit of mine but mostly that of many other developers I had the luck and pleaseure to work and play with.
+* [Automapper](https://automapper.codeplex.com/)
 
 
 Implement next:
 
-* Using DTOs AND mapping (even though the use ofd DTOs is somewhat controversial and advised only if strictly required?).
 * NHibernate for the persistence layer (as NORMAN is not open source yet).
+* 
 * OAuth / authentication.
 * Config / prebuilt events for local / deployment.
 * Unit tests for the business logic / Moq?.

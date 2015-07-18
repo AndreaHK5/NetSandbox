@@ -6,7 +6,7 @@ using Microsoft.Practices.Unity;
 using SampleApp.BusinessLayer;
 using SampleApp.BusinessLayer.Mocks;
 using SampleApp.BusinessLayer.ModelServices;
-using SampleApp.Models;
+using SampleApp.DTO;
 
 namespace SampleApp.Dependency
 {
@@ -34,12 +34,12 @@ namespace SampleApp.Dependency
                 switch (APIConfig.Repository)
                 {
                     case BusinessLayerType.Production:
-                        _dependencyContainer.RegisterType<IBaseService<BlogPost>, BaseService<BlogPost>>();
-                        _dependencyContainer.RegisterType<IBaseService<Blog>, BaseService<Blog>>();
+                        _dependencyContainer.RegisterType<IModelService<BlogPostDto>, BlogPostDtoService>();
+                        _dependencyContainer.RegisterType<IModelService<BlogDto>, BlogService>();
                         break;
                     case BusinessLayerType.Mock:
-                        _dependencyContainer.RegisterType<IBaseService<BlogPost>, BaseService<BlogPost>>();
-                        _dependencyContainer.RegisterType<IBaseService<Blog>, MockBlogService>();
+                        _dependencyContainer.RegisterType<IModelService<BlogPostDto>, BlogPostDtoService>();
+                        _dependencyContainer.RegisterType<IModelService<BlogDto>, MockBlogService>();
                         break;
                 }
             }

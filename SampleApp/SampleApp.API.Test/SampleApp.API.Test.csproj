@@ -101,6 +101,10 @@
       <Project>{aeccc441-bd0a-4546-be00-da0efd593545}</Project>
       <Name>SampleApp.API</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SampleApp.DTO\SampleApp.DTO.csproj">
+      <Project>{A81D99AD-4F94-4D65-ABC6-9DA33273A40B}</Project>
+      <Name>SampleApp.DTO</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SampleApp.Models\SampleApp.Models.csproj">
       <Project>{e934b529-7c43-4513-91af-5dcf287680e5}</Project>
       <Name>SampleApp.Models</Name>

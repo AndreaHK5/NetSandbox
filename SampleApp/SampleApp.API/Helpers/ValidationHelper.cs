@@ -21,7 +21,7 @@ namespace SampleApp.BusinessLayer.Validation {
         public static HttpResponseMessage FailedValidationMessage(ValidationResult _results) {
             var validationErrors = _results.Errors.Select(error => error.ErrorMessage).ToList();
             var errors = JsonConvert.SerializeObject(validationErrors);
-            return new HttpResponseMessage()
+            return new HttpResponseMessage
             {
                 Content = new StringContent(errors),
                 StatusCode = HttpStatusCode.BadRequest

@@ -1,9 +1,9 @@
 ﻿using FluentValidation;
-using SampleApp.Models;
+using SampleApp.DTO;
 
 namespace SampleApp.BusinessLayer.Validation
 {
-    public class BlogValidation : AbstractValidator<Blog> {
+    public class BlogValidation : AbstractValidator<BlogDto> {
         /// <summary>
         /// Validation for the Blog model
         /// </summary>

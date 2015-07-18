@@ -38,6 +38,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper">
+      <HintPath>..\packages\AutoMapper.3.3.1\lib\net40\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper.Net4">
+      <HintPath>..\packages\AutoMapper.3.3.1\lib\net40\AutoMapper.Net4.dll</HintPath>
+    </Reference>
     <Reference Include="FluentValidation">
       <HintPath>..\packages\FluentValidation.5.6.2.0\lib\Net45\FluentValidation.dll</HintPath>
     </Reference>
@@ -147,9 +153,9 @@
       <Project>{44d02104-b9bc-4ec5-92d4-49c940a12136}</Project>
       <Name>SampleApp.BusinessLayer</Name>
     </ProjectReference>
-    <ProjectReference Include="..\SampleApp.Models\SampleApp.Models.csproj">
-      <Project>{e934b529-7c43-4513-91af-5dcf287680e5}</Project>
-      <Name>SampleApp.Models</Name>
+    <ProjectReference Include="..\SampleApp.DTO\SampleApp.DTO.csproj">
+      <Project>{A81D99AD-4F94-4D65-ABC6-9DA33273A40B}</Project>
+      <Name>SampleApp.DTO</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
@@ -177,6 +183,7 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
+  <Import Project="..\packages\AutoMapper.3.3.1\tools\AutoMapper.targets" Condition="Exists('..\packages\AutoMapper.3.3.1\tools\AutoMapper.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

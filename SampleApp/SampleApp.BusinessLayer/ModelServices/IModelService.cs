@@ -6,7 +6,7 @@ namespace SampleApp.BusinessLayer.ModelServices
     /// Service interface for a persisted model.
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public interface IBaseService<T> {
+    public interface IModelService<T> {
         // TODO implement all other CRUD methods?
         bool Create(T Entity);
         List<T> GetAll();
